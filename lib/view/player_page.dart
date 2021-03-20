@@ -1,3 +1,4 @@
+import 'package:ddplayer/components/head.dart';
 import 'package:flutter/material.dart';
 
 class PlayerPage extends StatelessWidget {
@@ -6,10 +7,9 @@ class PlayerPage extends StatelessWidget {
   @override
   Widget build(Object context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Player')),
-      body: Center(
-        child: Text('Body'),
-      ),
-    );
+        appBar: AppBar(title: Text('Player')),
+        body: Column(
+          children: [Head()],
+        ));
   }
 }
