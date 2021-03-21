@@ -19,7 +19,7 @@ class StatInput extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(12.0, 0, 0, 4.0),
           child: BlocBuilder(
             bloc: cubit,
-            builder: (context, state) => Text('Мод. ${cubit.modifier}'),
+            builder: (context, _) => Text('Мод. ${cubit.modifier}'),
           ),
         )
       ],
@@ -30,7 +30,19 @@ class StatInput extends StatelessWidget {
 class Stats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    final masterBonus = Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Card(
+          child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Input(
+          'Бонус мастерства',
+          cubit: BlocProvider.of<MasterBonusCubit>(context),
+          expanded: false,
+        ),
+      )),
+    );
+    final stats = Padding(
       padding: const EdgeInsets.all(8.0),
       child: Card(
         child: Padding(
@@ -50,5 +62,7 @@ class Stats extends StatelessWidget {
         ),
       ),
     );
+
+    return Column(children: [masterBonus, stats]);
   }
 }

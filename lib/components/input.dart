@@ -5,8 +5,9 @@ class Input<T> extends StatelessWidget {
   final String label;
   final DDCubit<T>? cubit;
   final TextEditingController? _controller;
+  final bool expanded;
 
-  Input(this.label, {this.cubit})
+  Input(this.label, {this.cubit, this.expanded = true})
       : _controller = (cubit != null
             ? TextEditingController(text: cubit.value.toString())
             : null) {
@@ -38,15 +39,15 @@ class Input<T> extends StatelessWidget {
         break;
     }
 
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.all(2.0),
-        child: TextField(
-          decoration: decoration,
-          keyboardType: keyboardType,
-          controller: _controller,
-        ),
+    final child = Padding(
+      padding: const EdgeInsets.all(2.0),
+      child: TextField(
+        decoration: decoration,
+        keyboardType: keyboardType,
+        controller: _controller,
       ),
     );
+    if (expanded) return Expanded(child: child);
+    return child;
   }
 }

@@ -31,3 +31,7 @@ class WisdomCubit extends StatCubit {
 class CharismaCubit extends StatCubit {
   CharismaCubit() : super('charisma');
 }
+
+class MasterBonusCubit extends StatCubit {
+  MasterBonusCubit() : super('masterBonus');
+}

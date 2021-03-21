@@ -24,6 +24,7 @@ class PlayerPage extends StatelessWidget {
       BlocProvider(create: (BuildContext context) => IntelligenceCubit()),
       BlocProvider(create: (BuildContext context) => WisdomCubit()),
       BlocProvider(create: (BuildContext context) => CharismaCubit()),
+      BlocProvider(create: (BuildContext context) => MasterBonusCubit()),
     ], child: page);
   }
 }
