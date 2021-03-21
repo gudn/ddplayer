@@ -7,30 +7,35 @@ class Head extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Row(
-        children: [
-          Input('Имя персонажа'),
-          Expanded(
-            child: Column(
-              children: [
-                Row(
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              Input('Имя персонажа'),
+              Expanded(
+                child: Column(
                   children: [
-                    Input('Класс и уровень'),
-                    Input('Предыстория'),
-                    Input('Имя игрока')
+                    Row(
+                      children: [
+                        Input('Класс и уровень'),
+                        Input('Предыстория'),
+                        Input('Имя игрока')
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Input('Раса'),
+                        Input('Мировоззрение'),
+                        Input('Опыт')
+                      ],
+                    )
                   ],
                 ),
-                Row(
-                  children: [
-                    Input('Раса'),
-                    Input('Мировоззрение'),
-                    Input('Опыт')
-                  ],
-                )
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

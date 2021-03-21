@@ -17,5 +17,5 @@ class DDCubit<T> extends Cubit<KV<T>> {
     emit(KV(name: this.name, value: value));
   }
 
-  T get() => state.value;
+  T get value => state.value;
 }
