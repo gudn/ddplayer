@@ -12,8 +12,11 @@ class PlayerPage extends StatelessWidget {
   Widget build(Object context) {
     final page = Scaffold(
       appBar: AppBar(title: Text('Player')),
-      body: Column(
-        children: [Head(), Stats()],
+      body: Scrollbar(
+        child: ListView(
+          padding: const EdgeInsets.all(8.0),
+          children: [Head(), Stats()],
+        ),
       ),
     );
 

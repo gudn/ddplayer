@@ -30,35 +30,27 @@ class StatInput extends StatelessWidget {
 class Stats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final masterBonus = Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Card(
-          child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Input(
-          'Бонус мастерства',
-          cubit: BlocProvider.of<MasterBonusCubit>(context),
-          expanded: false,
-        ),
-      )),
-    );
-    final stats = Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Card(
+    final masterBonus = Card(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              StatInput('Сила', BlocProvider.of<StrengthCubit>(context)),
-              StatInput('Ловкость', BlocProvider.of<SleightCibut>(context)),
-              StatInput(
-                  'Телосложение', BlocProvider.of<PhysiqueCubit>(context)),
-              StatInput(
-                  'Интеллект', BlocProvider.of<IntelligenceCubit>(context)),
-              StatInput('Мудрость', BlocProvider.of<WisdomCubit>(context)),
-              StatInput('Харизма', BlocProvider.of<CharismaCubit>(context)),
-            ],
-          ),
+      padding: const EdgeInsets.all(8.0),
+      child: Input(
+        'Бонус мастерства',
+        cubit: BlocProvider.of<MasterBonusCubit>(context),
+        expanded: false,
+      ),
+    ));
+    final stats = Card(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            StatInput('Сила', BlocProvider.of<StrengthCubit>(context)),
+            StatInput('Ловкость', BlocProvider.of<SleightCibut>(context)),
+            StatInput('Телосложение', BlocProvider.of<PhysiqueCubit>(context)),
+            StatInput('Интеллект', BlocProvider.of<IntelligenceCubit>(context)),
+            StatInput('Мудрость', BlocProvider.of<WisdomCubit>(context)),
+            StatInput('Харизма', BlocProvider.of<CharismaCubit>(context)),
+          ],
         ),
       ),
     );
