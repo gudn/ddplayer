@@ -37,7 +37,7 @@ class SkillCubit extends DDCubit<bool> {
   SkillCubit(this.name, BuildContext context)
       : _statCubit = getStatCubit(name, context),
         _masterBonusCubit = getMasterBonusCubit(context),
-        super(name: name, value: false) {
+        super(name: 'skill-$name', value: false) {
     _statCubit.stream.listen((_) {
       final curr = value;
       set(!curr);
