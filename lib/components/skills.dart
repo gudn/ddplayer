@@ -101,6 +101,10 @@ class Skills extends StatelessWidget {
     return Card(
       child: Column(
         children: [
+          Text(
+            'Навыки',
+            style: Theme.of(context).textTheme.headline4,
+          ),
           for (final key in skillsList.keys) buildInput(key, context),
           BlocBuilder(
             bloc: attentionCubit,

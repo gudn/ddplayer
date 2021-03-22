@@ -33,17 +33,24 @@ class Stats extends StatelessWidget {
     final masterBonus = Card(
         child: Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Input(
-        'Бонус мастерства',
-        cubit: BlocProvider.of<MasterBonusCubit>(context),
-        expanded: false,
-      ),
+      child: Column(children: [
+        Text('Бонус мастерста', style: Theme.of(context).textTheme.headline4),
+        Input(
+          'Бонус мастерства',
+          cubit: BlocProvider.of<MasterBonusCubit>(context),
+          expanded: false,
+        ),
+      ]),
     ));
     final stats = Card(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
+            Text(
+              'Характеристики',
+              style: Theme.of(context).textTheme.headline4,
+            ),
             StatInput('Сила', BlocProvider.of<StrengthCubit>(context)),
             StatInput('Ловкость', BlocProvider.of<SleightCibut>(context)),
             StatInput('Телосложение', BlocProvider.of<PhysiqueCubit>(context)),
