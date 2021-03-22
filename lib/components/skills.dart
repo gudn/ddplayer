@@ -1,3 +1,4 @@
+import 'package:ddplayer/cubits/skills.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -96,9 +97,26 @@ class Skills extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final attentionCubit = AttentionCubit(context);
     return Card(
       child: Column(
-        children: [for (final key in skillsList.keys) buildInput(key, context)],
+        children: [
+          for (final key in skillsList.keys) buildInput(key, context),
+          BlocBuilder(
+            bloc: attentionCubit,
+            builder: (context, state) => CheckboxListTile(
+              title: Row(
+                children: [
+                  Text('Внимательность (мудрость)'),
+                  Text(attentionCubit.skill.toString())
+                ],
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              ),
+              value: attentionCubit.value,
+              onChanged: (bool? value) => attentionCubit.set(value ?? false),
+            ),
+          )
+        ],
       ),
     );
   }
