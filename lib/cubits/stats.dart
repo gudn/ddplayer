@@ -9,27 +9,27 @@ class StatCubit extends DDCubit<int> {
 }
 
 class StrengthCubit extends StatCubit {
-  StrengthCubit() : super('strength');
+  StrengthCubit() : super('сила');
 }
 
 class SleightCibut extends StatCubit {
-  SleightCibut() : super('sleight');
+  SleightCibut() : super('ловкость');
 }
 
 class PhysiqueCubit extends StatCubit {
-  PhysiqueCubit() : super('physique');
+  PhysiqueCubit() : super('телосложение');
 }
 
 class IntelligenceCubit extends StatCubit {
-  IntelligenceCubit() : super('intelligence');
+  IntelligenceCubit() : super('интеллект');
 }
 
 class WisdomCubit extends StatCubit {
-  WisdomCubit() : super('wisdom');
+  WisdomCubit() : super('мудрость');
 }
 
 class CharismaCubit extends StatCubit {
-  CharismaCubit() : super('charisma');
+  CharismaCubit() : super('харизма');
 }
 
 class MasterBonusCubit extends StatCubit {
