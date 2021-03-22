@@ -32,6 +32,6 @@ class CharismaCubit extends StatCubit {
   CharismaCubit() : super('харизма');
 }
 
-class MasterBonusCubit extends StatCubit {
-  MasterBonusCubit() : super('masterBonus');
+class MasterBonusCubit extends DDCubit<int> {
+  MasterBonusCubit() : super(name: 'бонус мастерства', value: 2);
 }

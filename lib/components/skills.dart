@@ -32,7 +32,8 @@ MasterBonusCubit getMasterBonusCubit(BuildContext context) =>
 
 class SkillCubit extends DDCubit<bool> {
   final String name;
-  final StatCubit _statCubit, _masterBonusCubit;
+  final StatCubit _statCubit;
+  final MasterBonusCubit _masterBonusCubit;
 
   SkillCubit(this.name, BuildContext context)
       : _statCubit = getStatCubit(name, context),
