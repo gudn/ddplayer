@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:ddplayer/components/head.dart';
 import 'package:ddplayer/components/stats.dart';
+import 'package:ddplayer/components/skills.dart';
 import 'package:ddplayer/cubits/stats.dart';
 
 class PlayerPage extends StatelessWidget {
@@ -15,7 +16,7 @@ class PlayerPage extends StatelessWidget {
       body: Scrollbar(
         child: ListView(
           padding: const EdgeInsets.all(8.0),
-          children: [Head(), Stats()],
+          children: [Head(), Stats(), Skills()],
         ),
       ),
     );
