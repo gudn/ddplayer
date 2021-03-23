@@ -34,7 +34,7 @@ class Stats extends StatelessWidget {
         child: Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(children: [
-        Text('Бонус мастерста', style: Theme.of(context).textTheme.headline4),
+        Text('Бонус мастерства', style: Theme.of(context).textTheme.headline4),
         Input(
           'Бонус мастерства',
           cubit: BlocProvider.of<MasterBonusCubit>(context),

@@ -69,7 +69,7 @@ class Status extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
                         children: [
-                          Text('Спас-броски от сметри',
+                          Text('Спас-броски от смерти',
                               style: Theme.of(context).textTheme.headline6),
                           Input('Успехи', expanded: false),
                           Input('Провалы', expanded: false),
