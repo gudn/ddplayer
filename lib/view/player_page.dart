@@ -1,3 +1,4 @@
+import 'package:ddplayer/components/big_field.dart';
 import 'package:ddplayer/components/status.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,6 +26,7 @@ class PlayerPage extends StatelessWidget {
             Stats(),
             SavingThrows(),
             Skills(),
+            BigField(),
             Info(),
           ],
         ),
