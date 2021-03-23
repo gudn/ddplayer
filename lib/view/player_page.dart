@@ -1,3 +1,4 @@
+import 'package:ddplayer/components/attacks.dart';
 import 'package:ddplayer/components/big_field.dart';
 import 'package:ddplayer/components/inventory.dart';
 import 'package:ddplayer/components/status.dart';
@@ -25,6 +26,7 @@ class PlayerPage extends StatelessWidget {
             Head(),
             Status(),
             Stats(),
+            AttacksAndMagic(),
             SavingThrows(),
             Skills(),
             Inventory(),
