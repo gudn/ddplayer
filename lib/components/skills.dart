@@ -99,30 +99,56 @@ class Skills extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final attentionCubit = AttentionCubit(context);
-    return Card(
-      child: Column(
-        children: [
-          Text(
-            'Навыки',
-            style: Theme.of(context).textTheme.headline4,
+    return Column(
+      children: [
+        Card(
+          child: Column(
+            children: [
+              Text(
+                'Навыки',
+                style: Theme.of(context).textTheme.headline4,
+              ),
+              for (final key in skillsList.keys) buildInput(key, context),
+              BlocBuilder(
+                bloc: attentionCubit,
+                builder: (context, state) => CheckboxListTile(
+                  title: Row(
+                    children: [
+                      Text('Внимательность (мудрость)'),
+                      Text(attentionCubit.skill.toString())
+                    ],
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  ),
+                  value: attentionCubit.value,
+                  onChanged: (bool? value) =>
+                      attentionCubit.set(value ?? false),
+                ),
+              )
+            ],
           ),
-          for (final key in skillsList.keys) buildInput(key, context),
-          BlocBuilder(
-            bloc: attentionCubit,
-            builder: (context, state) => CheckboxListTile(
-              title: Row(
+        ),
+        Card(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: BlocBuilder(
+              bloc: attentionCubit,
+              builder: (context, state) => Row(
                 children: [
-                  Text('Внимательность (мудрость)'),
-                  Text(attentionCubit.skill.toString())
+                  Text(
+                    'Пассивная внимательность',
+                    style: Theme.of(context).textTheme.headline5,
+                  ),
+                  Text(
+                    (attentionCubit.skill + 10).toString(),
+                    style: Theme.of(context).textTheme.headline5,
+                  )
                 ],
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
               ),
-              value: attentionCubit.value,
-              onChanged: (bool? value) => attentionCubit.set(value ?? false),
             ),
-          )
-        ],
-      ),
+          ),
+        )
+      ],
     );
   }
 }
