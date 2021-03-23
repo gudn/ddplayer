@@ -1,3 +1,4 @@
+import 'package:ddplayer/components/extra_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,7 +18,13 @@ class PlayerPage extends StatelessWidget {
       body: Scrollbar(
         child: ListView(
           padding: const EdgeInsets.all(8.0),
-          children: [Head(), Stats(), SavingThrows(), Skills()],
+          children: [
+            Head(),
+            Stats(),
+            SavingThrows(),
+            Skills(),
+            ExtraInfo(),
+          ],
         ),
       ),
     );
