@@ -1,4 +1,3 @@
-import 'package:ddplayer/components/extra_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -7,6 +6,7 @@ import 'package:ddplayer/components/head.dart';
 import 'package:ddplayer/components/stats.dart';
 import 'package:ddplayer/components/skills.dart';
 import 'package:ddplayer/cubits/stats.dart';
+import 'package:ddplayer/components/info.dart';
 
 class PlayerPage extends StatelessWidget {
   const PlayerPage({Key? key}) : super(key: key);
@@ -23,7 +23,7 @@ class PlayerPage extends StatelessWidget {
             Stats(),
             SavingThrows(),
             Skills(),
-            ExtraInfo(),
+            Info(),
           ],
         ),
       ),
