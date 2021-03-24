@@ -12,15 +12,3 @@ class DDPlayer extends MaterialApp {
           home: const PlayerPage(),
         );
 }
-
-class StateSaver extends BlocObserver {
-  @override
-  void onChange(BlocBase cubit, Change change) {
-    super.onChange(cubit, change);
-    if (cubit is DDCubit) {
-      final name = cubit.state.name;
-      final value = cubit.state.value.toString();
-      window.localStorage[name] = value;
-    }
-  }
-}
