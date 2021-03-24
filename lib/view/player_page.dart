@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:ddplayer/components/attacks.dart';
 import 'package:ddplayer/components/big_field.dart';
 import 'package:ddplayer/components/inventory.dart';
@@ -15,10 +17,41 @@ import 'package:ddplayer/components/info.dart';
 class PlayerPage extends StatelessWidget {
   const PlayerPage({Key? key}) : super(key: key);
 
+  Future<void> _showDialog(BuildContext context) async {
+    return showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => AlertDialog(
+        title: Text('Delete all data?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: Text('No'),
+          ),
+          TextButton(
+            onPressed: () {
+              window.localStorage.clear();
+              window.location.reload();
+            },
+            child: Text('Yes'),
+          )
+        ],
+      ),
+    );
+  }
+
   @override
-  Widget build(Object context) {
+  Widget build(BuildContext context) {
     final page = Scaffold(
-      appBar: AppBar(title: Text('Player')),
+      appBar: AppBar(
+        title: Text('Player'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.delete),
+            onPressed: () => _showDialog(context),
+          )
+        ],
+      ),
       body: Scrollbar(
         child: ListView(
           padding: const EdgeInsets.all(8.0),
