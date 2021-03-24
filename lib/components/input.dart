@@ -3,25 +3,24 @@ import 'package:flutter/material.dart';
 
 class Input<T> extends StatelessWidget {
   final String label;
-  final DDCubit<T>? cubit;
-  final TextEditingController? _controller;
+  final DDCubit<T> cubit;
+  final TextEditingController _controller;
   final bool expanded, multiline;
 
-  Input(this.label, {this.cubit, this.expanded = true, this.multiline = false})
-      : _controller = (cubit != null
-            ? TextEditingController(text: cubit.value.toString())
-            : null) {
-    _controller?.addListener(() {
-      if (_controller!.text.length == 0) return;
+  Input(this.label,
+      {required this.cubit, this.expanded = true, this.multiline = false})
+      : _controller = TextEditingController(text: cubit.value.toString()) {
+    _controller.addListener(() {
+      if (_controller.text.length == 0) return;
       switch (T) {
         case int:
-          cubit!.set((int.tryParse(_controller!.text) ?? 0) as T);
+          cubit.set((int.tryParse(_controller.text) ?? 0) as T);
           break;
         case double:
-          cubit!.set((double.tryParse(_controller!.text) ?? 0) as T);
+          cubit.set((double.tryParse(_controller.text) ?? 0) as T);
           break;
         case String:
-          cubit!.set(_controller!.text as T);
+          cubit.set(_controller.text as T);
           break;
         default:
           throw TypeError();

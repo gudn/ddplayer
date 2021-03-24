@@ -1,3 +1,4 @@
+import 'package:ddplayer/cubits/base_cubit.dart';
 import 'package:flutter/material.dart';
 
 import 'package:ddplayer/components/input.dart';
@@ -16,6 +17,7 @@ class BigField extends StatelessWidget {
               'Умения и особенности',
               expanded: false,
               multiline: true,
+              cubit: DDCubit(name: 'big field', value: ''),
             ),
           ],
         ),

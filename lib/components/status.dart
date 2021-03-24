@@ -1,3 +1,4 @@
+import 'package:ddplayer/cubits/base_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -34,9 +35,15 @@ class Status extends StatelessWidget {
                 child: Column(
                   children: [
                     Text('Хиты', style: Theme.of(context).textTheme.headline6),
-                    Input('Максимум хитов', expanded: false),
-                    Input('Текущие хиты', expanded: false),
-                    Input('Временные хиты', expanded: false),
+                    Input('Максимум хитов',
+                        expanded: false,
+                        cubit: DDCubit(name: 'максимум хитов', value: '')),
+                    Input('Текущие хиты',
+                        expanded: false,
+                        cubit: DDCubit(name: 'текущие хиты', value: '')),
+                    Input('Временные хиты',
+                        expanded: false,
+                        cubit: DDCubit(name: 'временные хиты', value: '')),
                   ],
                 ),
               ),
@@ -55,8 +62,13 @@ class Status extends StatelessWidget {
                         children: [
                           Text('Кость хитов',
                               style: Theme.of(context).textTheme.headline6),
-                          Input('Итого', expanded: false),
-                          Input('Кость хитов', expanded: false),
+                          Input('Итого',
+                              expanded: false,
+                              cubit: DDCubit(
+                                  name: 'итого костей хитов', value: '')),
+                          Input('Кость хитов',
+                              expanded: false,
+                              cubit: DDCubit(name: 'кость хитов', value: '')),
                         ],
                       ),
                     ),
@@ -71,8 +83,16 @@ class Status extends StatelessWidget {
                         children: [
                           Text('Спас-броски от смерти',
                               style: Theme.of(context).textTheme.headline6),
-                          Input('Успехи', expanded: false),
-                          Input('Провалы', expanded: false),
+                          Input('Успехи',
+                              expanded: false,
+                              cubit: DDCubit(
+                                  name: 'успехи спас-бросков от смерти',
+                                  value: '')),
+                          Input('Провалы',
+                              expanded: false,
+                              cubit: DDCubit(
+                                  name: 'провалы спас-бросков от смерти',
+                                  value: '')),
                         ],
                       ),
                     ),
@@ -129,7 +149,9 @@ class StatusInput extends StatelessWidget {
         elevation: 2.0,
         child: Column(
           children: [
-            Input(label, expanded: false),
+            Input(label,
+                expanded: false,
+                cubit: DDCubit(name: 'status-$label', value: 0)),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Text(label, style: Theme.of(context).textTheme.subtitle1),

@@ -1,3 +1,4 @@
+import 'package:ddplayer/cubits/base_cubit.dart';
 import 'package:flutter/material.dart';
 
 import 'package:ddplayer/components/input.dart';
@@ -13,14 +14,17 @@ class Inventory extends StatelessWidget {
             Text('Снаряжение', style: Theme.of(context).textTheme.headline4),
             Row(
               children: [
-                Input('ММ'),
-                Input('СМ'),
-                Input('ЭМ'),
-                Input('ЗМ'),
-                Input('ПМ'),
+                Input('ММ', cubit: DDCubit(name: 'мм', value: 0)),
+                Input('СМ', cubit: DDCubit(name: 'см', value: 0)),
+                Input('ЭМ', cubit: DDCubit(name: 'эм', value: 0)),
+                Input('ЗМ', cubit: DDCubit(name: 'зм', value: 0)),
+                Input('ПМ', cubit: DDCubit(name: 'пм', value: 0)),
               ],
             ),
-            Input('Снаряжение', expanded: false, multiline: true)
+            Input('Снаряжение',
+                expanded: false,
+                multiline: true,
+                cubit: DDCubit(name: 'снаряжение', value: ''))
           ],
         ),
       ),
