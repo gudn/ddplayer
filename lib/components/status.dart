@@ -20,7 +20,7 @@ class Status extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   StatusInput('КД'),
-                  InitiativeWidget(),
+                  StatusInput('Инициатива'),
                   StatusInput('Скорость'),
                 ],
               ),
@@ -103,33 +103,6 @@ class Status extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class InitiativeWidget extends StatelessWidget {
-  const InitiativeWidget({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final sleightCubit = BlocProvider.of<SleightCibut>(context);
-    return Expanded(
-      child: Card(
-          elevation: 2.0,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              BlocBuilder(
-                bloc: sleightCubit,
-                builder: (context, state) => Text(
-                    sleightCubit.modifier.toString(),
-                    style: Theme.of(context).textTheme.headline6),
-              ),
-              Text('Инициатива', style: Theme.of(context).textTheme.subtitle1)
-            ],
-          )),
     );
   }
 }
